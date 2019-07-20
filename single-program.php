@@ -45,8 +45,13 @@
               )
             )
           ));
-          while( $programPageEvents->have_posts() ){
-            $programPageEvents->the_post();
+
+          if( $programPageEvents->have_posts() ){
+            echo "<hr class='section-break'>";
+            echo "<h2 class='headline headline--medium'>Upcoming " . get_the_title() . " Events</h2>";
+
+            while( $programPageEvents->have_posts() ){
+              $programPageEvents->the_post();
 
         ?>
             <div class="event-summary">
@@ -69,8 +74,9 @@
               </div>
             </div>
         <?php
+            }
           }
-          wp_reset_postdata();
+        wp_reset_postdata();
         ?>
     </div>   
 
