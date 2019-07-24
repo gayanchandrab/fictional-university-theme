@@ -19,6 +19,9 @@ function fictionaluniversity_features(){
     register_nav_menu( 'footerMenuLocationOne' , 'Footer Menu Location One' );
     register_nav_menu( 'footerMenuLocationTwo' , 'Footer Menu Location Two' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'professorLandscape', 400, 260, true);
+    add_image_size( 'professorPortrait', 480, 650, true);
 }
 
 add_action( 'after_setup_theme', 'fictionaluniversity_features' );
@@ -79,7 +82,21 @@ function fictionaluniversity_post_types(){
         ),
         'menu_icon' => 'dashicons-awards'
     ));
-    }
+
+    // Professor post type
+    register_post_type( 'professor', array(
+        'public' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'labels' => array(
+            'name' => 'Professors',
+            'add_new_item' => 'Add New Professor',
+            'edit_item' => 'Edit Professor',
+            'all_items' => 'All Professors'
+        ),
+        'menu_icon' => 'dashicons-welcome-learn-more'
+    ));
+
+}
 
 add_action( 'init', 'fictionaluniversity_post_types' );
 
