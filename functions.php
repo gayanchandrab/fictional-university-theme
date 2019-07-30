@@ -154,7 +154,7 @@ function pageBanner( $args = null ){
 
 function universityMapKey( $api ){
 	
-	$api['key'] = 'AIzaSyBIOMi1cezDNfgQUy26Rmepz8yOEGPUpVg';
+	$api['key'] = 'api-key-here';
 	
 	return $api;
 	
