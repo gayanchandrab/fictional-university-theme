@@ -9,7 +9,7 @@ function fictionaluniversity_styles() {
 add_action( 'wp_enqueue_scripts' , 'fictionaluniversity_styles' );
 
 function fictionaluniversity_scripts() {
-    wp_enqueue_script( 'googlemaps-js', '//maps.googleapis.com/maps/api/js?key=AIzaSyBIOMi1cezDNfgQUy26Rmepz8yOEGPUpVg', NULL, NULL, true);
+    wp_enqueue_script( 'googlemaps-js', '//maps.googleapis.com/maps/api/js?key=api-key-here', NULL, NULL, true);
     wp_enqueue_script( 'fictionaluniversity-js', get_template_directory_uri() . '/js/scripts-bundled.js', NULL, '1.0', true);
 }
 
